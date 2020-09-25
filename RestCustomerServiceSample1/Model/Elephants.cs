@@ -14,7 +14,6 @@ namespace RestCustomerServiceSample1.Model
 
         public Elephants()
         {
-
         }
         public Elephants(int id , string name , long weight, string species)
         {
