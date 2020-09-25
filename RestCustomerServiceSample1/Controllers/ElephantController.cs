@@ -42,8 +42,15 @@ namespace RestCustomerServiceSample1.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Elephants elephant)
         {
-            _dbList.Add(elephant);
-            return CreatedAtAction("Get", new { id = elephant.Id }, elephant);
+            if(!ElephantExists(elephant.Id))
+            {
+                _dbList.Add(elephant);
+                return CreatedAtAction("Get", new { id = elephant.Id }, elephant);
+            }
+            else
+            {
+                return NotFound(new { message = "Id is duplicate" });
+            }
         }
 
         // PUT api/<ElephantController>/5
@@ -89,6 +96,10 @@ namespace RestCustomerServiceSample1.Controllers
         {
             var elephant = _dbList.FirstOrDefault(e => e.Id == id);
             return elephant;
+        }
+        private bool ElephantExists(long id)
+        {
+            return _dbList.Any(e => e.Id == id);
         }
     }
 }

@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>RestElephanyWebAPIServices</AssemblyName>
+    <RootNamespace>RestElephanyWebAPIServices</RootNamespace>
   </PropertyGroup>
 
 
