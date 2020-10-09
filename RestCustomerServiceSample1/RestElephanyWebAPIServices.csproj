@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>RestElephanyWebAPIServices</AssemblyName>
     <RootNamespace>RestElephanyWebAPIServices</RootNamespace>
+    <UserSecretsId>95ccb155-21eb-421f-9c8e-5caf35d636b3</UserSecretsId>
   </PropertyGroup>
 
 

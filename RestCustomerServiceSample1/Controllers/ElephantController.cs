@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using RestCustomerServiceSample1.Model;
 
@@ -40,6 +41,7 @@ namespace RestCustomerServiceSample1.Controllers
 
         // POST api/<ElephantController>
         [HttpPost]
+        [DisableCors]
         public IActionResult Post([FromBody] Elephants elephant)
         {
             if(!ElephantExists(elephant.Id))
@@ -77,6 +79,7 @@ namespace RestCustomerServiceSample1.Controllers
 
         // DELETE api/<ElephantController>/5
         [HttpDelete("{id}")]
+        [DisableCors]
         public IActionResult Delete(int id)
         {           
             var elephant = GetElephant(id);
