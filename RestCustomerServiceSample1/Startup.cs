@@ -46,7 +46,7 @@ namespace RestCustomerServiceSample1
                 options.AddPolicy("AllowAnyOriginsGetPUT",
                 builder =>
                 {
-                    builder.AllowAnyOrigin().AllowAnyHeader().WithMethods("GET", "PUT");
+                    builder.AllowAnyOrigin().AllowAnyHeader().WithMethods("GET", "POST");
                 });
             });
 

@@ -29,6 +29,7 @@ namespace RestCustomerServiceSample1.Controllers
 
         // GET api/<ElephantController>/5
         [HttpGet("{id}")]
+        [DisableCors]
         public IActionResult Get(int id)
         {
             var elephant = GetElephant(id);
@@ -57,6 +58,7 @@ namespace RestCustomerServiceSample1.Controllers
 
         // PUT api/<ElephantController>/5
         [HttpPut("{id}")]
+        [EnableCors("AllowSpecifOrigin")]
         public IActionResult Put(int id, [FromBody] Elephants newElephant)
         {
             if(id != newElephant.Id)
