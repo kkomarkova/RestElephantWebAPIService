@@ -62,20 +62,15 @@ namespace RestCustomerServiceSample1
                 app.UseDeveloperExceptionPage();
             }
 
-            // Shows which cors policy you would to like to define here. use.cors
-             app.UseCors("AllowAnyOriginsGetPUT");
-            //app.UseCors("AllowSpecificOrigins");
-            //app.UseCors("AllowAnyOrigins");
-
-
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            // Shows which cors policy you would to like to define here. use.cors
+            app.UseCors("AllowAnyOriginsGetPUT");
+            //app.UseCors("AllowSpecificOrigins");
+            //app.UseCors("AllowAnyOrigins");
 
-           
-
-            app.UseAuthorization();
-           
+            app.UseAuthorization();           
 
             app.UseEndpoints(endpoints =>
             {
