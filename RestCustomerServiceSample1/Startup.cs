@@ -61,15 +61,16 @@ namespace RestCustomerServiceSample1
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            // You must have to follow the exact sequence to implement the CORS....
             app.UseHttpsRedirection();
-
+            // 1st use Use.Routing()
             app.UseRouting();
+            // 2nd use os UseCors
             // Shows which cors policy you would to like to define here. use.cors
             app.UseCors("AllowAnyOriginsGetPUT");
             //app.UseCors("AllowSpecificOrigins");
             //app.UseCors("AllowAnyOrigins");
-
+            // 3rd use UseAuthorization
             app.UseAuthorization();           
 
             app.UseEndpoints(endpoints =>
